@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f -perm -o=w > archivos_peligrosos.txt
