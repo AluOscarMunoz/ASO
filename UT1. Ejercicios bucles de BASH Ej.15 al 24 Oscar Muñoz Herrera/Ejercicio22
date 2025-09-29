@@ -1,0 +1,13 @@
+#!/bin/bash
+dir=$1
+cont=0
+for i in "$dir"/*
+do
+  if [ -d "$i" ]; then
+    echo "$i es un directorio"
+  else
+    echo "$i es un fichero"
+  fi
+  cont=$((cont+1))
+done
+echo "Total: $cont"

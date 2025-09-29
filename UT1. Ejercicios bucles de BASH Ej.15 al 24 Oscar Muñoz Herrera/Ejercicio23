@@ -1,0 +1,16 @@
+#!/bin/bash
+dir=$1
+for i in "$dir"/*
+do
+  if [ -L "$i" ]; then
+    echo "$i enlace simbólico"
+  elif [ -b "$i" ]; then
+    echo "$i bloque"
+  elif [ -c "$i" ]; then
+    echo "$i caracter"
+  elif [ -d "$i" ]; then
+    echo "$i directorio"
+  elif [ -f "$i" ]; then
+    echo "$i fichero"
+  fi
+done

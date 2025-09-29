@@ -1,0 +1,18 @@
+#!/bin/bash
+dir=$1
+if [ -d "$dir" ]; then
+  f=0
+  d=0
+  for i in "$dir"/*
+  do
+    if [ -f "$i" ]; then
+      f=$((f+1))
+    elif [ -d "$i" ]; then
+      d=$((d+1))
+    fi
+  done
+  echo "Ficheros: $f"
+  echo "Directorios: $d"
+else
+  echo "No es un directorio"
+fi

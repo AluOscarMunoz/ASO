@@ -1,0 +1,17 @@
+#!/bin/bash
+num=42
+while true
+do
+  read -p "Adivina: " x
+  if [ $x -eq 0 ]; then
+    echo "Te rendiste"
+    exit 0
+  elif [ $x -eq $num ]; then
+    echo "Enhorabuena"
+    exit 0
+  elif [ $x -lt $num ]; then
+    echo "Mayor"
+  else
+    echo "Menor"
+  fi
+done

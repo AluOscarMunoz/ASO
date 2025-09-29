@@ -1,0 +1,11 @@
+#!/bin/bash
+suma=0
+while true
+do
+  read n
+  if [ $n -eq 0 ]; then
+    echo $suma
+    exit 0
+  fi
+  suma=$((suma+n))
+done
