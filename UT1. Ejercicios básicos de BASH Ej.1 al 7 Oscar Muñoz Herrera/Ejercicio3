@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ls /etc > lista.txt
+
+cat lista.txt
+
+echo "numero de lineas: $(wc -l < lista.txt)"
+echo "numero de palabras: $(wc -w < lista.txt)"

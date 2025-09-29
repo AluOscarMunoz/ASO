@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "Dime un numero para comparar: " num1
+read -p "Dime el otro: " num2
+
+if [ $num1 -eq $num2 ]; then
+
+	echo "Son el mismo número"
+
+
+elif [ $num1 -gt $num2 ]; then
+	echo $num1 " es mayor que " $num2
+else
+
+echo $num2 " es mayor que " $num1
+
+fi

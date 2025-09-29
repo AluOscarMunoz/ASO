@@ -1,0 +1,6 @@
+#!/bin/bash
+
+read -p "Dime un numero: " num1
+read -p "Dime otro: " num2
+
+echo "Los numeros que has puesto son: $num1 y $num2"

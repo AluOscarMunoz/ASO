@@ -1,0 +1,45 @@
+#!/bin/bash
+archivo="lista_alu.txt"
+
+while true; do
+    echo "========= AGENDA ========="
+    echo "1) Añadir"
+    echo "2) Buscar"
+    echo "3) Listar"
+    echo "4) Ordenar"
+    echo "5) Borrar"
+    echo "6) Salir"
+    echo "=========================="
+    read -p "Elige una opción: " opcion
+
+    case $opcion in
+        1) read -p "Nombre: " nombre
+           read -p "Dirección: " direccion
+           read -p "Teléfono: " telefono
+           echo "$nombre | $direccion | $telefono" >> $archivo
+           echo "Registro añadido en $archivo"
+           ;;
+        2) read -p "Texto a buscar: " busqueda
+           grep -i "$busqueda" $archivo 2>/dev/null || echo "No se encontraron coincidencias."
+           ;;
+        3) if [ -f "$archivo" ]; then
+               cat $archivo
+           else
+               echo "La agenda está vacía."
+           fi
+           ;;
+        4) if [ -f "$archivo" ]; then
+               sort $archivo -o $archivo
+               echo "Agenda ordenada alfabéticamente."
+           else
+               echo "La agenda está vacía."
+           fi
+           ;;
+        5) rm -f $archivo && echo "Archivo $archivo borrado"
+           ;;
+        6) echo "Saliendo..."
+           exit 0
+           ;;
+        *) echo "Opción inválida";;
+    esac
+done

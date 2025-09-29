@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "Dime un nombre para añadir a la lista: " nombre
+
+
+echo "$nombre" >> listanombres.txt
+
+cat listanombres.txt
+

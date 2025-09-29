@@ -1,0 +1,10 @@
+#!/bin/bash
+[ $# -lt 4 ] && echo "Uso: $0 alta/baja nombre ap1 ap2 [grupo]" && exit
+id="alu${3:0:2}${4:0:2}${2:0:1}"
+if [ $1 = alta ]; then
+    [ -z $5 ] && groupadd $id && useradd -m -g $id $id || useradd -m -g $5 $id
+elif [ $1 = baja ]; then
+    userdel -r $id
+else
+    echo "Error de sintaxis"
+fi
