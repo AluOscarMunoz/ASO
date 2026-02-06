@@ -1,0 +1,6 @@
+﻿Import-Csv "C:\Users\Administrador\Downloads\archivos\empleados.csv" -delimiter ";" | ForEach-Object {
+    $nombre = "$($_.nombre).$($_.apellido)"
+    if ($_.departamento -eq "PERSONAL"){
+        Set-ADUser -Identity $nombre -ProfilePath \\Empresa-dc1\Empresa_users$\$nombre\
+    }
+}
